@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactNode } from 'react';
 
 interface HomeProps {}
 
-const Home = () => {
+const Home: ReactNode = (): HomeProps => {
   return <div>Component</div>;
 };
 
