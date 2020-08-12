@@ -17,6 +17,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "next": "9.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",

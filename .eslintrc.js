@@ -6,13 +6,15 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
+    // 'plugin:@typescript-eslint/recommended',
+    // 'plugin:@typescript-eslint/eslint-recommended',
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
     module: 'readonly',
+    process: 'readonly',
+    require: 'readonly',
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
