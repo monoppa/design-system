@@ -1,7 +1,12 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import Button from '../src/components/global/Button/Button';
 
-const Home: ReactNode = () => {
-  return <div className='text-red-500'>Home</div>;
+const Home = () => {
+  return (
+    <div>
+      <Button />
+    </div>
+  );
 };
 
 export default Home;
