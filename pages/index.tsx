@@ -1,9 +1,7 @@
 import React, { ReactNode } from 'react';
 
-interface HomeProps {}
-
-const Home: ReactNode = (): HomeProps => {
-  return <div>Component</div>;
+const Home: ReactNode = () => {
+  return <div className='text-red-500'>Component</div>;
 };
 
 export default Home;
