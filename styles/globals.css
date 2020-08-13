@@ -9,10 +9,6 @@ body {
   @apply text-gray-900;
 }
 
-.button {
-  @apply py-3 px-8 shadow-md transition-all duration-75 ease-in font-semibold;
-}
-
 .button:hover {
   @apply shadow-2xl transform -translate-y-1;
 }
@@ -23,10 +19,6 @@ body {
 
 .button:focus {
   @apply outline-none;
-}
-
-.button-gradient {
-  @apply bg-gradient-primary-700 text-white;
 }
 
 @tailwind utilities;

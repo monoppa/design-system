@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     gradients: (theme) => ({
       'primary-700': [theme('colors.primary-700'), theme('colors.indigo-700')],
+      'gray-300': [theme('colors.gray.300'), theme('colors.gray.300')],
     }),
     extend: {
       colors: {
@@ -27,6 +28,13 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    opacity: ['responsive', 'hover', 'focus', 'disabled'],
+    textColor: ['responsive', 'hover', 'focus', 'disabled'],
+    boxShadow: ['responsive', 'hover', 'focus', 'disabled'],
+    cursor: ['responsive', 'hover', 'focus', 'disabled'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'disabled'],
+    borderColor: ['responsive', 'hover', 'focus', 'disabled'],
+  },
   plugins: [require('./plugins/gradients')],
 };
