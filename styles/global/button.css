@@ -1,0 +1,35 @@
+.button {
+  @apply px-6 py-2 font-semibold transition-all duration-75 ease-in-out shadow-md;
+}
+
+.button:enabled:hover {
+  @apply transform -translate-y-1 shadow-2xl;
+}
+
+.button:focus:active {
+  @apply transform translate-y-0 shadow;
+}
+
+.button:focus {
+  @apply outline-none;
+}
+
+.button:disabled {
+  @apply shadow-none cursor-not-allowed;
+}
+
+.button-disabled:disabled {
+  @apply shadow-none cursor-not-allowed;
+}
+
+.button-solid:disabled {
+  @apply text-white bg-gray-300;
+}
+
+.button-outline {
+  @apply border button;
+}
+
+.button-outline:disabled {
+  @apply text-gray-400 border-gray-400;
+}

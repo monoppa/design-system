@@ -6,32 +6,32 @@ type ButtonProps = {
   className?: string;
   variant?: 'solid' | 'outline';
   disabled?: boolean;
+  onClick?: () => {};
+  type?: 'button' | 'submit';
 };
-
-const bareClasses =
-  ' py-2 px-6 transition-all duration-75 ease-in-out font-semibold shadow-md disabled:shadow-none disabled:cursor-not-allowed';
-
-const outlineClasses =
-  'border disabled:border-gray-400 disabled:text-gray-400' + bareClasses;
-
-const solidClasses = 'disabled:bg-gray-300 disabled:text-white';
 
 const Button = ({
   children,
   className = '',
   variant = 'solid',
   disabled = false,
+  onClick,
+  type = 'button',
 }: ButtonProps) => {
   const classes = cx({
-    [bareClasses]: true,
-    ['button']: !disabled,
+    ['button']: true,
+    ['button-solid']: variant !== 'outline',
+    ['button-outline']: variant === 'outline',
     [className]: !!className,
-    [solidClasses]: variant !== 'outline',
-    [outlineClasses]: variant === 'outline',
   });
 
   return (
-    <button className={classes} disabled={disabled}>
+    <button
+      className={classes}
+      disabled={disabled}
+      onClick={onClick}
+      type={type}
+    >
       {children}
     </button>
   );

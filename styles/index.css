@@ -9,16 +9,8 @@ body {
   @apply text-gray-900;
 }
 
-.button:hover {
-  @apply shadow-2xl transform -translate-y-1;
-}
+@import './global/button.css';
+@import './global/input.css';
 
-.button:focus:active {
-  @apply shadow transform translate-y-0;
-}
-
-.button:focus {
-  @apply outline-none;
-}
-
+/* must be last line */
 @tailwind utilities;
