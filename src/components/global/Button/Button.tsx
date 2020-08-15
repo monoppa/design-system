@@ -1,22 +1,19 @@
 import React, { ReactNode } from 'react';
 import cx from 'classnames';
 
-type ButtonProps = {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
   variant?: 'solid' | 'outline';
   disabled?: boolean;
-  onClick?: () => {};
-  type?: 'button' | 'submit';
-};
+}
 
 const Button = ({
   children,
   className = '',
   variant = 'solid',
   disabled = false,
-  onClick,
-  type = 'button',
+  ...buttonProps
 }: ButtonProps) => {
   const classes = cx({
     ['button']: true,
@@ -26,12 +23,7 @@ const Button = ({
   });
 
   return (
-    <button
-      className={classes}
-      disabled={disabled}
-      onClick={onClick}
-      type={type}
-    >
+    <button className={classes} disabled={disabled} {...buttonProps}>
       {children}
     </button>
   );
