@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../src/components/global/Button/Button';
 import TextInput from '../src/components/global/Input/TextInput';
+import Select from '../src/components/global/Input/Select';
+import SelectItem from '../src/components/global/Input/SelectItem';
 
 const Home = () => {
+  const [selectValue, selectValueSet] = useState('');
+
+  const handleSelectChange = (event: React.FormEvent<HTMLSelectElement>) => {
+    selectValueSet(event.currentTarget.value);
+  };
+
   return (
     <div className='m-16 '>
       <section className='mb-8'>
@@ -12,6 +20,17 @@ const Home = () => {
           // error='Please enter your name'
           placeholder='Your name'
         />
+
+        <Select
+          name='hello'
+          value={selectValue}
+          label='Please select something'
+          // error='Please enter your name'
+          onChange={handleSelectChange}
+        >
+          <SelectItem value='first'>First</SelectItem>
+          <SelectItem value='second'>Second</SelectItem>
+        </Select>
       </section>
 
       <section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import InputLabel from './InputLabel';
 
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -7,7 +8,7 @@ interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   placeholder?: string;
   error?: string;
-  optional?: boolean;
+  required?: boolean;
 }
 
 // type TextInputProps = {
@@ -20,7 +21,7 @@ const TextInput = ({
   label,
   placeholder,
   error,
-  optional = false,
+  required,
   ...inputProps
 }: TextInputProps) => {
   const inputClasses = cx({
@@ -31,18 +32,7 @@ const TextInput = ({
 
   return (
     <div className='flex flex-col'>
-      {!!label && (
-        <label htmlFor={name} className='pb-2 text-gray-800 cursor-pointer'>
-          <span>{label}</span>
-
-          {!!optional && (
-            <>
-              &nbsp;
-              <span className='text-gray-700'>(optional)</span>
-            </>
-          )}
-        </label>
-      )}
+      {!!label && <InputLabel name={name} label={label} required={required} />}
 
       <input
         id={name}
