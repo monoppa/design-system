@@ -27,6 +27,7 @@ const Home = () => {
           label='Please select something'
           // error='Please enter your name'
           onChange={handleSelectChange}
+          required
         >
           <SelectItem value='first'>First</SelectItem>
           <SelectItem value='second'>Second</SelectItem>
@@ -60,12 +61,15 @@ const Home = () => {
           secondary
         </Button>
 
-        <Button className='mx-4 border-gray-900 rounded-lg' variant='outline'>
+        <Button
+          className='mx-4 bg-white border-gray-900 rounded-lg'
+          variant='outline'
+        >
           Outline
         </Button>
 
         <Button
-          className='border-gray-900 rounded-lg'
+          className='bg-white border-gray-900 rounded-lg'
           variant='outline'
           disabled
         >
